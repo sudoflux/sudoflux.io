@@ -8,6 +8,13 @@ description: Infrastructure documentation for storage, media, containers, and ne
 
 Documentation for production-style home infrastructure.
 
+## Hardware Reference
+
+| Node | CPU | RAM | GPU | Role |
+|------|-----|-----|-----|------|
+| sudoflux | Ryzen 9 9950X | 96GB DDR5 | RTX 4090 | Server, services |
+| powerflux | Ryzen 9950X3D | 64GB DDR5 | RTX 5090 | VR, gaming |
+
 ## Scope
 
 This section covers:
