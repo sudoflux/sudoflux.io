@@ -1,29 +1,29 @@
 ---
 sidebar_position: 2
 title: Known-Good Baselines
-description: Index of verified working configurations
+description: Index of verified configurations
 ---
 
 # Known-Good Baselines
 
-These are configurations that have been tested and verified to work. Each links to a full doc with details.
+Verified starting configurations.
 
-## VR Baselines
+## VR
 
-| Baseline | Hardware | Last Verified | Status |
-|----------|----------|---------------|--------|
-| [VR Baseline Checklist](/docs/vr-lab/baseline-checklist) | Pimax Super 50PPD | 2026-01-24 | ✅ Current |
+| Baseline | Last Verified | Status |
+|----------|---------------|--------|
+| [VR Baseline Checklist](/docs/vr-lab/baseline/checklist) | — | Current |
 
-## Homelab Baselines
+## Homelab
 
-| Baseline | System | Last Verified | Status |
-|----------|--------|---------------|--------|
-| [Architecture Overview](/docs/homelab/architecture) | Full stack | 2026-01-24 | ✅ Current |
-| [ZFS Configuration](/docs/homelab/storage/zfs-gotchas) | Storage | 2026-01-24 | ✅ Current |
-| [Jellyfin Transcode](/docs/homelab/media/jellyfin-transcode) | Media | 2026-01-24 | ✅ Current |
+| Baseline | Last Verified | Status |
+|----------|---------------|--------|
+| [Architecture](/docs/homelab/architecture) | — | Current |
+| [ZFS Configuration](/docs/homelab/storage/zfs-gotchas) | — | Current |
+| [Jellyfin Transcode](/docs/homelab/media/jellyfin-transcode) | — | Current |
 
-## Status Legend
+## Status Key
 
-- ✅ **Current**: Verified within the last 30 days
-- ⚠️ **Stale**: Not verified in 30-90 days, may still work
-- ❌ **Outdated**: Known to be broken or superseded
+- **Current** — Verified within 30 days
+- **Stale** — 30-90 days since verification
+- **Outdated** — Known broken or superseded

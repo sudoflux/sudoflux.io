@@ -1,53 +1,51 @@
 ---
 sidebar_position: 3
 title: Docs vs Field Notes
-description: The information architecture philosophy
+description: Content classification and quality standards
 ---
 
 # Docs vs Field Notes
 
-This site enforces a clear separation between two types of content.
+This site separates two types of content.
 
-## Docs: Reproducible Claims
+## Docs
 
-Docs are **verified procedures** that should work if you follow them. They:
+Verified procedures. Reproducible claims.
 
-- Use consistent templates
-- Include "Last verified" dates with version numbers
-- Are tested before publishing
-- Get updated when things break
-- Live in the sidebar navigation
+| Property | Standard |
+|----------|----------|
+| Verification | Tested before publishing |
+| Versioning | Software/firmware versions recorded |
+| Maintenance | Updated when verified, marked stale otherwise |
+| Location | Sidebar navigation |
 
-A doc says: "Do X, Y, Z and you will get result W."
+A doc states: "Do X and Y happens."
 
-## Field Notes: Experiments & Observations
+## Field Notes
 
-Field Notes are **lab notebook entries**. They:
+Lab notebook entries. Experiments and observations.
 
-- Capture what I tried and what happened
-- May be incomplete or wrong
-- Are tagged for searchability
-- Live in the blog/feed
-- May eventually become docs
+| Property | Standard |
+|----------|----------|
+| Verification | May be unverified |
+| Completeness | May be incomplete |
+| Accuracy | May be incorrect |
+| Location | Blog feed |
 
-A field note says: "I tried X, observed Y, not sure why yet."
+A field note states: "I tried X and observed Y."
 
-## The Promotion Path
+## Promotion Path
 
 ```
-Experiment → Field Note → Verified → Doc
+Experiment → Field Note → Verification → Doc
 ```
 
-1. I try something new
-2. I write a Field Note capturing the attempt
-3. If it works reliably after multiple tests, I write a Doc
-4. The Field Note stays as historical context
+Field Notes that prove reliable become Docs. The Field Note remains as historical record.
 
-## Why This Matters
+## Rationale
 
-VR and homelab configs are **version-sensitive**. A setting that works today breaks tomorrow after a driver update. By separating "things I tried" from "things that work," readers know what to trust.
+VR and homelab configurations are version-sensitive. Driver updates, firmware changes, and software patches invalidate configurations regularly.
 
-When a doc breaks:
-1. It gets marked stale/outdated
-2. I investigate in Field Notes
-3. Once fixed, the doc gets updated with new version info
+Separating verified procedures from experiments allows readers to distinguish between:
+- Things that work (Docs)
+- Things being investigated (Field Notes)

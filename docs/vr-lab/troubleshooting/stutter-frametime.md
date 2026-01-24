@@ -1,90 +1,111 @@
 ---
 sidebar_position: 1
-title: "Troubleshooting: Stutter & Frametime"
-description: Diagnosing VR performance issues
-last_verified: 2026-01-24
+title: Stutter & Frametime
+description: Systematic diagnosis of VR performance issues
 ---
 
-# Stutter & Frametime Troubleshooting
+# Stutter & Frametime
 
 Systematic approach to diagnosing VR performance problems.
 
-:::info Last Verified
-**Date**: 2026-01-24  
-**PiTool Version**: X.X.X  
-**GPU Driver**: XXX.XX
-:::
+## Verification Status
 
-## Symptom Categories
+| Field | Value |
+|-------|-------|
+| Last verified | — |
+| PiTool version | — |
+| GPU driver | — |
 
-### 1. Consistent High Frametimes
+---
 
-**Symptom**: Frametimes consistently above target (e.g., 14ms instead of 11.1ms for 90Hz)
+## Symptom Index
 
-| Possible Cause | Diagnostic | Fix |
-|----------------|------------|-----|
-| GPU bottleneck | GPU usage at 100% in task manager | Lower render resolution or detail settings |
-| CPU bottleneck | GPU usage below 90%, CPU thread maxed | Reduce physics, AI, or crowd settings |
-| VRAM exhaustion | Stutters after loading, VRAM full | Lower texture quality, close background apps |
-| Thermal throttling | Performance degrades over time | Check temps, improve cooling |
+- [Consistent high frametimes](#consistent-high-frametimes)
+- [Periodic spikes](#periodic-spikes)
+- [Reprojection artifacts](#reprojection-artifacts)
 
-### 2. Frametime Spikes
+---
 
-**Symptom**: Mostly good frametimes with periodic spikes
+## Consistent High Frametimes
 
-| Possible Cause | Diagnostic | Fix |
-|----------------|------------|-----|
-| Background process | Spikes correlate with specific app activity | Close unnecessary apps, check task scheduler |
-| Asset streaming | Spikes when moving to new areas | Game-specific, may need SSD or settings tweak |
-| Driver overhead | Random spikes, no clear pattern | Try different driver version |
-| USB bandwidth | Spikes with tracking loss | Check USB controller, try different port |
+**Symptom**: Frametimes consistently above target (e.g., 14ms at 90Hz target of 11.1ms)
 
-### 3. Reprojection/Smoothing Artifacts
+| Cause | Diagnostic | Resolution |
+|-------|------------|------------|
+| GPU bound | GPU usage 100% | Reduce render resolution or detail |
+| CPU bound | GPU < 90%, CPU thread maxed | Reduce physics, AI, crowd settings |
+| VRAM exhaustion | Stutters after load, VRAM full | Lower textures, close background apps |
+| Thermal throttle | Degradation over time | Check temps, improve cooling |
 
-**Symptom**: Visible doubling, smearing, or wobble
+### Diagnostic Steps
 
-| Possible Cause | Diagnostic | Fix |
-|----------------|------------|-----|
-| Forced reprojection | Smart smoothing indicator on | Reduce settings until native framerate achieved |
-| Tracking issues | Artifacts correlate with head movement | Check base station visibility, reflections |
-| Wrong smoothing settings | Both PiTool and SteamVR smoothing enabled | Disable one, use only PiTool's |
+1. Open Task Manager → Performance
+2. Launch VR title
+3. Observe GPU and CPU utilization
+4. If GPU 100%: GPU bound
+5. If GPU < 90% with poor performance: CPU bound or driver issue
+
+---
+
+## Periodic Spikes
+
+**Symptom**: Stable frametimes with intermittent spikes
+
+| Cause | Diagnostic | Resolution |
+|-------|------------|------------|
+| Background process | Spikes correlate with app activity | Disable startup apps, check scheduler |
+| Asset streaming | Spikes when entering new areas | Move to SSD, adjust streaming settings |
+| Driver overhead | Random pattern | Test different driver versions |
+| USB bandwidth | Spikes with tracking glitches | Different USB controller or port |
+
+### Diagnostic Steps
+
+1. Note spike timing and pattern
+2. Correlate with:
+   - Game events (area transitions, combat)
+   - System events (notifications, updates)
+   - Tracking behavior
+
+---
+
+## Reprojection Artifacts
+
+**Symptom**: Visual doubling, smearing, or wobble
+
+| Cause | Diagnostic | Resolution |
+|-------|------------|------------|
+| Forced reprojection | Smart smoothing active | Reduce settings for native framerate |
+| Tracking issues | Artifacts follow head movement | Check base station visibility |
+| Dual smoothing | Both PiTool and SteamVR enabled | Disable SteamVR Motion Smoothing |
+
+---
 
 ## Diagnostic Tools
 
 ### Built-in
 
-- **PiTool Overlay**: Shows frametimes, reprojection status
-- **SteamVR Frame Timing**: Advanced > Developer > Display Frame Timing
-- **fpsVR**: Third-party overlay with detailed stats
+- PiTool overlay: Frametime graph, reprojection status
+- SteamVR Frame Timing: Settings → Developer → Display Frame Timing
+- fpsVR: Third-party overlay with detailed metrics
 
-### System-level
+### System
 
-- **Task Manager**: CPU/GPU usage per process
-- **HWiNFO64**: Temperatures, throttling detection
-- **LatencyMon**: DPC latency issues
+- Task Manager: Per-process utilization
+- HWiNFO64: Temperature and throttling
+- LatencyMon: DPC latency analysis
 
-## Diagnostic Flowchart
+---
 
-```
-Start: Experiencing stutter?
-  │
-  ├─► Constant high frametimes?
-  │     └─► Check GPU/CPU usage → Bottleneck section above
-  │
-  ├─► Periodic spikes?
-  │     └─► Note when they occur → Spike section above
-  │
-  └─► Visual artifacts only?
-        └─► Check smoothing settings → Reprojection section above
-```
+## Version-Specific Issues
 
-## Version Notes
+| Version | Known Issue | Status |
+|---------|-------------|--------|
+| — | — | — |
 
-| Driver/Firmware | Known Issues |
-|-----------------|--------------|
-| *Add as discovered* | |
+---
 
-## Related
+## Revision History
 
-- [VR Baseline Checklist](/docs/vr-lab/baseline-checklist)
-- [Field Notes: VR](/field-notes/tags/vr)
+| Date | Change |
+|------|--------|
+| — | Initial document |

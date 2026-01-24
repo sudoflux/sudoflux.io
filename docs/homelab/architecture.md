@@ -1,17 +1,21 @@
 ---
 sidebar_position: 2
-title: Architecture Overview
-description: Homelab infrastructure architecture and design decisions
-last_verified: 2026-01-24
+title: Architecture
+description: Infrastructure design and system topology
 ---
 
-# Architecture Overview
+# Architecture
 
-High-level view of the homelab infrastructure.
+System design and topology overview.
 
-:::info Last Verified
-**Date**: 2026-01-24
-:::
+## Verification Status
+
+| Field | Value |
+|-------|-------|
+| Last verified | — |
+| OS | — |
+
+---
 
 ## Network Topology
 
@@ -20,92 +24,93 @@ Internet
     │
     ▼
 ┌─────────────┐
-│   UDM SE    │ ← Router/Firewall
+│   UDM SE    │
 └─────────────┘
     │
-    ├── VLAN 1: Management (192.168.1.0/24)
-    ├── VLAN XX: Servers
-    ├── VLAN XX: IoT
-    └── VLAN XX: Guest
+    ├── Management
+    ├── Servers
+    ├── IoT
+    └── Guest
 ```
+
+---
 
 ## Compute
 
-### Primary Server: sudoflux
+### Primary Node
 
-| Component | Spec | Notes |
-|-----------|------|-------|
-| CPU | *spec* | |
-| RAM | *spec* | |
-| GPU | *spec* | For transcoding, AI |
-| Boot | *spec* | |
-| Storage | *spec* | See ZFS section |
+| Component | Specification |
+|-----------|---------------|
+| Hostname | — |
+| CPU | — |
+| RAM | — |
+| GPU | — |
+| Boot | — |
+| Storage | See Storage section |
 
 **Roles**:
-- Docker host for all services
+- Container host
 - Media transcoding
-- AI/ML workloads
+- Compute workloads
 
 ### Network Equipment
 
 | Device | Role |
 |--------|------|
 | UDM SE | Router, firewall, controller |
-| *switches* | |
-| *APs* | |
+| — | — |
 
-## Storage Architecture
+---
 
-### ZFS Pools
+## Storage
 
 | Pool | Topology | Capacity | Purpose |
 |------|----------|----------|---------|
-| *name* | *raidz2/mirror* | *TB* | *use* |
+| — | — | — | — |
 
-See [ZFS Gotchas](/docs/homelab/storage/zfs-gotchas) for configuration details.
+See [ZFS Gotchas](/docs/homelab/storage/zfs-gotchas) for configuration.
+
+---
 
 ## Service Stack
 
-### Container Runtime
-
-- Docker with Compose
-- No orchestration (single-node)
-
-### Core Services
-
 | Service | Purpose | Port |
 |---------|---------|------|
-| Jellyfin | Media streaming | 8096 |
-| *arr stack | Media management | various |
+| Jellyfin | Media | 8096 |
 | Prometheus | Metrics | 9090 |
 | Grafana | Dashboards | 3001 |
+| — | — | — |
 
-See individual service docs for configuration details.
+---
 
-## Backup Strategy
+## Backup
 
-| Data Type | Method | Destination | Frequency |
-|-----------|--------|-------------|-----------|
-| Configs | *method* | *dest* | *freq* |
-| Media | *method* | *dest* | *freq* |
-| Databases | *method* | *dest* | *freq* |
+| Data | Method | Destination | Frequency |
+|------|--------|-------------|-----------|
+| Configuration | — | — | — |
+| Media | — | — | — |
+| Databases | — | — | — |
 
-## Design Decisions
+---
 
-### Why Single Node?
+## Design Rationale
 
-*Explanation of tradeoffs*
+### Single Node
 
-### Why Docker Over K8s?
+*Rationale for single-node architecture over distributed.*
 
-*Explanation of tradeoffs*
+### Docker over Kubernetes
 
-### Why ZFS?
+*Rationale for orchestration choice.*
 
-*Explanation of tradeoffs*
+### ZFS
 
-## Diagram
+*Rationale for filesystem choice.*
 
-*TODO: Add network diagram image*
+---
 
-![Architecture diagram placeholder](/img/homelab/architecture-placeholder.png)
+## Revision History
+
+| Date | Change |
+|------|--------|
+| — | Initial document |

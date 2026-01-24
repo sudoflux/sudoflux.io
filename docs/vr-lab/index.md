@@ -1,48 +1,37 @@
 ---
 sidebar_position: 1
-title: VR Lab Overview
-description: Pimax Super 50PPD tuning, baselines, and troubleshooting
+title: VR Lab
+description: Documentation for Pimax Super 50PPD tuning and VR configuration
 ---
 
 # VR Lab
 
-Documentation for Pimax Super 50PPD tuning, performance optimization, and game-specific settings.
+Documentation for high-end VR configuration, focusing on Pimax Super 50PPD.
 
-## Current Hardware
+## Scope
 
-| Component | Model | Notes |
-|-----------|-------|-------|
-| HMD | Pimax Super 50PPD | Main headset |
-| GPU | *Your GPU here* | |
-| CPU | *Your CPU here* | |
-| Tracking | *Lighthouse/etc* | |
+This section covers:
 
-## Sections
+- **Baseline** — Verified starting configurations
+- **Tuning** — Optimization guides for specific scenarios
+- **Troubleshooting** — Systematic diagnosis of common issues
+- **Games** — Per-title settings and configurations
 
-### Baselines
+## Hardware Reference
 
-Verified starting configurations that work. Start here before tweaking.
+| Component | Current |
+|-----------|---------|
+| HMD | Pimax Super 50PPD |
+| GPU | — |
+| CPU | — |
+| Tracking | — |
 
-- [Baseline Checklist](/docs/vr-lab/baseline-checklist) - The known-good starting point
+## Document Standards
 
-### Troubleshooting
+Every page includes:
 
-Symptom-driven guides for common issues.
+- **Last verified** — Date with software/firmware versions
+- **Versions tested** — Specific builds confirmed working
+- **Hardware notes** — When configuration is hardware-dependent
 
-- [Stutter & Frametime Issues](/docs/vr-lab/troubleshooting/stutter-frametime) - Diagnosing performance problems
-
-### Games
-
-Per-game settings, tested configurations, and screenshots.
-
-- Game pages will appear here as they are added
-
-## Philosophy
-
-VR tuning is highly version-sensitive. Driver updates, firmware changes, and game patches can invalidate settings overnight. Every page includes:
-
-- **Last verified** date with specific versions
-- **Versions tested** section
-- Clear indication when something is stale
-
-If a guide doesn't work, check the versions first before assuming user error.
+Pages are updated when verified. Stale content is marked or removed.

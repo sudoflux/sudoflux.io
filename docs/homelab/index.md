@@ -1,53 +1,35 @@
 ---
 sidebar_position: 1
-title: Homelab Overview
-description: Infrastructure, storage, media, and operations
+title: Homelab
+description: Infrastructure documentation for storage, media, containers, and networking
 ---
 
 # Homelab
 
-Documentation for my home infrastructure, storage systems, media stack, and operational practices.
+Documentation for production-style home infrastructure.
 
-## Infrastructure at a Glance
+## Scope
 
-| Role | Hardware | OS | Purpose |
-|------|----------|-----|---------|
-| *primary* | *spec* | *os* | Main workloads |
-| *storage* | *spec* | *os* | ZFS pools |
-| *network* | *device* | - | Routing/firewall |
+This section covers:
 
-See [Architecture](/docs/homelab/architecture) for the full diagram and details.
+- **Architecture** — System design and topology
+- **Storage** — ZFS configuration and management
+- **Media** — Jellyfin and media automation stack
+- **Containers & Ops** — Docker, deployment, operations
+- **Networking** — Network design and configuration
+- **Troubleshooting** — Issue diagnosis and resolution
 
-## Sections
+## Document Standards
 
-### Storage
+Every page includes:
 
-ZFS configuration, best practices, and lessons learned.
-
-- [ZFS Gotchas](/docs/homelab/storage/zfs-gotchas) - Things I learned the hard way
-
-### Media Stack
-
-Jellyfin, *arr apps, and media management.
-
-- [Jellyfin Transcode Decision Tree](/docs/homelab/media/jellyfin-transcode) - When and how to transcode
-
-### Services
-
-Per-service documentation.
-
-- Service docs will appear here as they are added
-
-### Troubleshooting
-
-Issue-driven guides.
-
-- Troubleshooting guides will appear here as they are added
+- **Last verified** — Date with relevant software versions
+- **Versions tested** — Container tags, OS versions, firmware
+- **Hardware notes** — When configuration is hardware-specific
 
 ## Philosophy
 
-Homelab documentation should be:
-
-1. **Reproducible**: Someone else (or future me) can rebuild from these docs
-2. **Version-aware**: Container tags, configs, and dependencies are recorded
-3. **Honest about failures**: Document what didn't work and why
+- Reproducible: Documentation sufficient to rebuild from scratch
+- Versioned: All software versions recorded
+- Tested: Only verified configurations documented
+- Honest: Failures and limitations documented

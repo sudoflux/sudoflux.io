@@ -1,49 +1,48 @@
 ---
-# Field Note Post Template
-# Copy this file and rename to: YYYY-MM-DD-slug-name.md
+# Field Note Template
+# Copy and rename to: YYYY-MM-DD-slug.md
 
 slug: short-url-slug
-title: Post Title
+title: Title
 authors: [sudoflux]
 tags: [tag1, tag2]
-# draft: true  # Uncomment to hide from production
+# draft: true
 ---
 
-Brief summary of what this post covers (shown in listings).
+Brief summary (shown in listings).
 
 <!-- truncate -->
 
 ## Context
 
-*What prompted this experiment/observation?*
+*What prompted this investigation?*
 
-## What I Tried
+## Procedure
 
-*Steps taken, commands run, settings changed*
+*What was tried?*
 
 ```bash
-# Commands used
+# Commands executed
 ```
 
-## What Happened
+## Observations
 
-*Results, observations, measurements*
+*What happened?*
 
-## Current Understanding
+## Analysis
 
-*What I think is going on (may be wrong)*
+*Current understanding (may be incomplete)*
 
 ## Open Questions
 
-- Question 1?
-- Question 2?
+- Question 1
+- Question 2
 
 ## Next Steps
 
-- [ ] Thing to try next
-- [ ] Another thing
+- [ ] Follow-up item
+- [ ] Follow-up item
 
 ## Related
 
 - [Relevant doc](/docs/...)
-- [Previous field note](/field-notes/...)

@@ -1,36 +1,35 @@
 ---
-sidebar_position: 999
-title: "Service Template"
-description: Template for documenting homelab services
-draft: true
+title: "[Service Name]"
+description: Configuration and operation of [Service Name]
 ---
 
-# Service Name
+# [Service Name]
 
-Brief description of what this service does and why it's in the stack.
+[Brief description of service purpose]
 
-:::info Last Verified
-**Date**: YYYY-MM-DD  
-**Image**: `image:tag`
-:::
+## Verification Status
 
-## Purpose
+| Field | Value |
+|-------|-------|
+| Last verified | — |
+| Image/Version | — |
+| Host OS | — |
 
-*What problem does this solve? Why was it chosen over alternatives?*
+---
 
-## Quick Reference
+## Overview
 
 | Property | Value |
 |----------|-------|
-| Container | `container-name` |
-| Port | XXXX |
-| Data Path | `/path/to/data` |
-| Config Path | `/path/to/config` |
-| Upstream | [link](https://...) |
+| Container | — |
+| Port | — |
+| Data path | — |
+| Config path | — |
+| Upstream docs | — |
+
+---
 
 ## Deployment
-
-### Docker Compose
 
 ```yaml
 services:
@@ -39,7 +38,7 @@ services:
     container_name: service-name
     restart: unless-stopped
     ports:
-      - "XXXX:XXXX"
+      - "PORT:PORT"
     volumes:
       - ./config:/config
       - ./data:/data
@@ -47,52 +46,54 @@ services:
       - TZ=America/New_York
 ```
 
-### Required Setup
+## Initial Setup
 
-*Steps needed after first deployment*
+1. —
+2. —
 
-1. Step one
-2. Step two
+---
 
 ## Configuration
 
-### Key Settings
-
 | Setting | Value | Notes |
 |---------|-------|-------|
-| *setting* | *value* | *why* |
+| — | — | — |
 
-### Integration Points
+## Integrations
 
-| Service | How |
-|---------|-----|
-| *other service* | *API/webhook/etc* |
+| Service | Method |
+|---------|--------|
+| — | — |
 
-## Backup
+---
+
+## Operations
+
+### Backup
 
 | Data | Method | Location |
 |------|--------|----------|
-| Config | *method* | *path* |
-| Data | *method* | *path* |
+| — | — | — |
 
-### Restore Procedure
+### Restore
 
 ```bash
-# Restore commands
+# Restore procedure
 ```
 
-## Monitoring
+### Health Check
 
-- Health check: `curl http://localhost:XXXX/health`
-- Prometheus metrics: `http://localhost:XXXX/metrics`
+```bash
+# Health check command
+```
+
+---
 
 ## Troubleshooting
 
-### Common Issues
-
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| *symptom* | *cause* | *fix* |
+| Symptom | Cause | Resolution |
+|---------|-------|------------|
+| — | — | — |
 
 ### Logs
 
@@ -100,13 +101,10 @@ services:
 docker logs service-name -f --tail 100
 ```
 
-## Version History
+---
+
+## Revision History
 
 | Date | Change |
 |------|--------|
-| YYYY-MM-DD | Initial deployment |
-
-## Related
-
-- [Architecture Overview](/docs/homelab/architecture)
-- [Field Notes](/field-notes/tags/relevant-tag)
+| — | Initial deployment |

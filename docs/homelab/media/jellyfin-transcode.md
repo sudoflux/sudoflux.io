@@ -1,92 +1,96 @@
 ---
 sidebar_position: 1
-title: Jellyfin Playback & Transcode Decision Tree
-description: When Jellyfin transcodes and how to optimize
-last_verified: 2026-01-24
+title: Jellyfin Transcoding
+description: Playback decision tree and transcoding configuration
 ---
 
-# Jellyfin Playback & Transcode Decision Tree
+# Jellyfin Transcoding
 
-Understanding when Jellyfin transcodes and how to minimize it.
+Understanding when Jellyfin transcodes and how to optimize.
 
-:::info Last Verified
-**Date**: 2026-01-24  
-**Jellyfin Version**: X.X.X  
-**GPU**: *for hardware transcode*
-:::
+## Verification Status
 
-## The Decision Tree
+| Field | Value |
+|-------|-------|
+| Last verified | — |
+| Jellyfin version | — |
+| GPU | — |
+
+---
+
+## Decision Tree
 
 ```
 Client requests playback
          │
          ▼
    Container supported?
-    (mkv, mp4, etc.)
          │
     ┌────┴────┐
     No       Yes
     │         │
     ▼         ▼
- Remux    Video codec supported?
-            (h264, hevc, etc.)
+  Remux    Video codec supported?
          │
     ┌────┴────┐
     No       Yes
     │         │
     ▼         ▼
 Transcode   Audio codec supported?
-  Video        (aac, ac3, etc.)
+  Video
          │
     ┌────┴────┐
     No       Yes
     │         │
     ▼         ▼
-Transcode  Subtitles need burning?
-  Audio      (ass, image-based)
+Transcode  Subtitles burn-in required?
+  Audio
          │
     ┌────┴────┐
     Yes      No
     │         │
     ▼         ▼
-Transcode  Direct Play!
-  Video    (no server load)
+Transcode  Direct Play
+  Video
 ```
 
-## What Causes Transcoding?
+---
 
-### Video Transcoding (Expensive)
+## Transcode Triggers
 
-| Cause | Solution |
-|-------|----------|
-| Client doesn't support HEVC | Use h264 source or HEVC-capable client |
-| Resolution too high | Client-side setting, or encode lower res version |
-| HDR on SDR display | Tone-mapping transcode, expensive |
-| Bitrate limit | Increase client bitrate limit or encode lower bitrate |
+### Video (High Cost)
 
-### Audio Transcoding (Cheap)
+| Trigger | Resolution |
+|---------|------------|
+| HEVC on unsupported client | h264 encode or HEVC-capable client |
+| Resolution exceeds client | Client setting or lower-res encode |
+| HDR on SDR display | Tone-mapping transcode (expensive) |
+| Bitrate limit | Raise limit or lower-bitrate encode |
 
-| Cause | Solution |
-|-------|----------|
-| TrueHD/DTS-HD unsupported | Usually fine, stereo transcode is light |
-| Too many channels | Stereo mixdown is fine |
+### Audio (Low Cost)
 
-### Subtitle Burning (Triggers Video Transcode)
+| Trigger | Resolution |
+|---------|------------|
+| TrueHD/DTS-HD unsupported | Stereo transcode acceptable |
+| Channel count | Stereo mixdown acceptable |
 
-| Subtitle Type | Behavior |
-|---------------|----------|
+### Subtitles (Triggers Video Transcode)
+
+| Type | Behavior |
+|------|----------|
 | SRT | Delivered separately, no transcode |
 | ASS/SSA | Burned in = video transcode |
 | PGS/VOBSUB | Burned in = video transcode |
 
-**Fix**: Convert image-based subs to SRT, or use clients that support them natively.
+**Resolution**: Convert image-based subtitles to SRT.
 
-## Hardware Transcoding Setup
+---
 
-### NVIDIA (Recommended)
+## Hardware Transcoding
+
+### NVIDIA
 
 ```yaml
-# docker-compose.yml excerpt
 services:
   jellyfin:
     image: jellyfin/jellyfin
@@ -99,71 +103,41 @@ services:
 
 Dashboard → Playback → Transcoding:
 - Hardware acceleration: NVIDIA NVENC
-- Enable hardware decoding for: H264, HEVC, VP9, AV1 (if supported)
-- Enable hardware encoding
-
-### Intel QuickSync
-
-```yaml
-devices:
-  - /dev/dri:/dev/dri
-```
+- Enable decoding: H264, HEVC, VP9, AV1 (if supported)
+- Enable encoding
 
 ### Verification
 
-Check if hardware transcode is working:
-
 ```bash
-# NVIDIA
-nvidia-smi  # Should show jellyfin process
-
-# Intel
-intel_gpu_top
+nvidia-smi  # Should show jellyfin process during transcode
 ```
 
-## Client-Specific Notes
+---
 
-| Client | Direct Play Support | Notes |
-|--------|--------------------|----|
-| Jellyfin Media Player | Excellent | Desktop, supports almost everything |
-| Web browser | Limited | No HEVC in most browsers |
-| Roku | Good | Some older models struggle |
-| Apple TV | Good | MKV remux needed |
-| Chromecast | Limited | Transcodes frequently |
+## Client Compatibility
 
-## Optimization Strategy
+| Client | Direct Play Support |
+|--------|---------------------|
+| Jellyfin Media Player | Excellent |
+| Web browser | Limited (no HEVC) |
+| Roku | Good |
+| Apple TV | Good (MKV remux) |
+| Chromecast | Limited |
 
-### Priority Order
+---
 
-1. **Direct Play** - Zero server load
-2. **Direct Stream (Remux)** - Minimal load
-3. **Audio-only transcode** - Light load
-4. **Video transcode (HW)** - Moderate load
-5. **Video transcode (SW)** - Heavy load
+## Optimization Priority
 
-### Quick Wins
+1. Direct Play — Zero load
+2. Direct Stream (Remux) — Minimal load
+3. Audio transcode — Light load
+4. Video transcode (HW) — Moderate load
+5. Video transcode (SW) — Heavy load
 
-1. Use Jellyfin Media Player on desktop
-2. Enable hardware transcoding
-3. Convert image subs to SRT
-4. Encode to h264 for maximum compatibility
-5. Keep HEVC for local/high-end clients
+---
 
-## Monitoring
-
-Dashboard shows current streams and transcode status.
-
-For historical data, integrate with:
-- Prometheus via Jellyfin plugin
-- Tautulli (primarily for Plex, but concept applies)
-
-## Version History
+## Revision History
 
 | Date | Change |
 |------|--------|
-| 2026-01-24 | Initial doc |
-
-## Related
-
-- [Architecture Overview](/docs/homelab/architecture)
-- [Field Notes: Jellyfin](/field-notes/tags/homelab)
+| — | Initial document |

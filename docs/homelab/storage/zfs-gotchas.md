@@ -1,141 +1,126 @@
 ---
 sidebar_position: 1
-title: ZFS Gotchas I Learned the Hard Way
-description: ZFS lessons, mistakes, and best practices from real experience
-last_verified: 2026-01-24
+title: ZFS Gotchas
+description: ZFS lessons and operational knowledge
 ---
 
-# ZFS Gotchas I Learned the Hard Way
+# ZFS Gotchas
 
-Things I wish I knew before setting up ZFS.
+Operational knowledge from running ZFS in production.
 
-:::info Last Verified
-**Date**: 2026-01-24  
-**ZFS Version**: X.X.X  
-**OS**: Ubuntu XX.XX
-:::
+## Verification Status
 
-## The Big Ones
+| Field | Value |
+|-------|-------|
+| Last verified | — |
+| ZFS version | — |
+| OS | — |
 
-### 1. You Can't Shrink a Pool
+---
 
-**The gotcha**: ZFS pools can only grow, never shrink. You can't remove vdevs from a pool (with limited exceptions for mirrors).
+## Critical Knowledge
 
-**What I learned**: Plan your pool topology carefully. If you think you might want flexibility later, use mirrors instead of raidz.
+### Pools Cannot Shrink
 
-**Mitigation**: 
-- Start with the topology you want long-term
-- Use mirrors if you value flexibility over space efficiency
-- Backup and recreate if you need to restructure
+ZFS pools grow only. Vdevs cannot be removed (with limited mirror exceptions).
 
-### 2. RAIDZ Expansion Was a Myth (Until Recently)
+**Implication**: Plan topology before creation. Mirrors offer flexibility over raidz.
 
-**The gotcha**: For years, you couldn't expand a raidz vdev by adding drives. You had to add another vdev or replace all drives with larger ones.
+### RAIDZ Expansion
 
-**Current status**: OpenZFS 2.3+ supports raidz expansion, but it's still new.
+OpenZFS 2.3+ supports raidz expansion. Earlier versions do not.
 
-**What I learned**: Check your ZFS version before assuming features exist.
+**Implication**: Verify ZFS version before assuming expansion capability.
 
-### 3. Dedup Is Probably Not For You
+### Dedup Requires Significant RAM
 
-**The gotcha**: Dedup sounds great but requires ~5GB of RAM per TB of deduplicated data. It's also CPU-intensive.
+Deduplication requires ~5GB RAM per TB of deduplicated data.
 
-**What I learned**: Unless you have specific workloads with high redundancy AND massive RAM, skip dedup. Use compression instead.
+**Recommendation**: Use compression (`lz4`) instead. Nearly free and effective.
 
-**Better alternative**: `lz4` compression is nearly free and works for most data.
+### Scrubs Are Required
 
-### 4. Scrubs Are Non-Negotiable
+ZFS detects silent corruption only on read or scrub.
 
-**The gotcha**: ZFS won't detect silent data corruption until you try to read the data or run a scrub.
-
-**What I learned**: Schedule scrubs monthly. Yes, they take time. No, you can't skip them.
+**Requirement**: Monthly scrubs. Non-negotiable.
 
 ```bash
-# Check last scrub
-zpool status
-
-# Manual scrub
 zpool scrub poolname
+zpool status  # Check scrub state
 ```
 
-### 5. ECC RAM Matters (But Maybe Not How You Think)
+### ECC RAM
 
-**The gotcha**: ZFS doesn't *require* ECC, but a memory bit flip can cause data corruption that ZFS will happily checksum and store.
+ZFS checksums data. Memory corruption can corrupt data before checksum.
 
-**What I learned**: ECC is cheap insurance for data you care about. Not strictly required, but strongly recommended.
+**Recommendation**: ECC RAM for data integrity. Not required, but strongly advised.
 
-## Configuration Gotchas
+---
+
+## Configuration
 
 ### ARC Size
 
-**The gotcha**: ZFS will use all available RAM for ARC (cache) by default. This can starve applications.
-
-**Fix**: Set explicit limits in `/etc/modprobe.d/zfs.conf`:
+ZFS uses available RAM for ARC. Can starve applications.
 
 ```bash
-# Limit ARC to 8GB
-options zfs zfs_arc_max=8589934592
+# /etc/modprobe.d/zfs.conf
+options zfs zfs_arc_max=8589934592  # 8GB limit
 ```
 
 ### Ashift
 
-**The gotcha**: ZFS guesses sector size at pool creation. If it guesses wrong (512 instead of 4096), performance suffers forever.
-
-**Fix**: Always specify ashift when creating pools:
+Sector size must be correct at pool creation.
 
 ```bash
+# Always specify ashift
 zpool create -o ashift=12 poolname ...
 ```
 
-### Recordsize for Databases
+### Recordsize
 
-**The gotcha**: Default recordsize (128K) is bad for databases that do small random I/O.
-
-**Fix**: Set recordsize=8K or 16K for database datasets:
+Default 128K inappropriate for databases.
 
 ```bash
+# Database datasets
 zfs set recordsize=16K poolname/database
 ```
 
-## Operational Gotchas
+---
 
-### Send/Receive Resume
+## Operations
 
-**The gotcha**: Large `zfs send` operations can fail and lose progress.
+### Send/Receive
 
-**Fix**: Use resume tokens (ZFS 0.7+):
+Large transfers can fail. Use resume tokens (ZFS 0.7+).
 
 ```bash
 zfs send -t <token> | zfs receive ...
 ```
 
-### Snapshots Aren't Backups
+### Snapshots vs Backups
 
-**The gotcha**: Snapshots on the same pool don't protect against drive failure.
+Snapshots are point-in-time recovery on same pool. Not backup.
 
-**What I learned**: Snapshots are for point-in-time recovery. Backups go to different physical media.
+**Backup**: Different physical media. Different location.
 
-## My Current Configuration
+---
+
+## Current Configuration
 
 ```bash
-# Pool status
 zpool status
-
-# Key settings
 zfs get compression,recordsize,atime poolname
 ```
 
 | Dataset | Recordsize | Compression | Purpose |
 |---------|------------|-------------|---------|
-| *dataset* | *size* | *algo* | *use* |
+| — | — | — | — |
 
-## Version History
+---
+
+## Revision History
 
 | Date | Change |
 |------|--------|
-| 2026-01-24 | Initial doc |
-
-## Related
-
-- [Architecture Overview](/docs/homelab/architecture)
-- [Field Notes: ZFS](/field-notes/tags/homelab)
+| — | Initial document |

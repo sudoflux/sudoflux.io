@@ -1,43 +1,43 @@
 ---
 sidebar_position: 1
-title: Welcome to sudoflux
-description: How to navigate this nerd wiki
+title: Welcome
+description: Site orientation and navigation guide
 ---
 
-# Welcome to sudoflux
+# Welcome
 
-This is a documentation site and lab notebook covering two main areas:
+This site documents operational knowledge for two systems:
 
-- **VR Lab**: Pimax Super 50PPD tuning, baselines, troubleshooting, and per-game settings
-- **Homelab**: Infrastructure, storage, media stack, and operational knowledge
+- **VR Lab** — Pimax Super 50PPD tuning, baselines, troubleshooting
+- **Homelab** — Infrastructure, storage, media, containers, networking
 
-## How This Site Works
+## Document Types
 
-### Docs vs Field Notes
+### Docs
 
-This site separates two types of content:
+Canonical documentation. Verified, reproducible, versioned.
 
-| Type | Purpose | Quality Bar |
-|------|---------|-------------|
-| **Docs** | Reproducible claims, verified procedures | High - tested, includes version info |
-| **Field Notes** | Experiments, observations, work-in-progress | Lower - may be rough, unverified |
+- Located in VR Lab and Homelab sections
+- Include verification dates and tested versions
+- Updated when verified, marked stale otherwise
 
-**Docs** live in the sidebar navigation. They have templates, "Last verified" metadata, and are meant to be reliable.
+### Field Notes
 
-**Field Notes** are blog-style posts. They capture what I tried, what I observed, and what I'm still figuring out. Good field notes get promoted to docs once verified.
+Lab notebook. Experiments, observations, work-in-progress.
 
-### Version Sensitivity
+- Located in Field Notes section
+- May be incomplete or incorrect
+- Promoted to Docs when verified
 
-VR and homelab configs break constantly due to driver updates, firmware changes, and software releases. Every doc page includes:
+## Navigation
 
-- **Last verified**: Date and relevant version numbers
-- **Versions tested**: What software/firmware was used
+| Section | Content |
+|---------|---------|
+| [VR Lab](/docs/vr-lab) | VR configuration and tuning |
+| [Homelab](/docs/homelab) | Infrastructure documentation |
+| [Field Notes](/field-notes) | Experiments and observations |
 
-If you're reading a doc and it doesn't work, check the versions first.
+## Quick Start
 
-## Quick Links
-
-- [Known-Good Baselines](/docs/start-here/baselines) - Index of working configurations
-- [VR Lab](/docs/vr-lab) - Pimax tuning and troubleshooting
-- [Homelab](/docs/homelab) - Infrastructure and services
-- [Field Notes](/field-notes) - Lab notebook and experiments
+- [VR Baseline Checklist](/docs/vr-lab/baseline/checklist) — Starting VR configuration
+- [Homelab Architecture](/docs/homelab/architecture) — Infrastructure overview

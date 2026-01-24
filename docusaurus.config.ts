@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'sudoflux',
-  tagline: 'Optimization at the Edge of Immersion',
+  tagline: 'Operational notes for VR and homelab systems',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -42,7 +42,7 @@ const config: Config = {
           path: 'blog',
           routeBasePath: 'field-notes',
           blogTitle: 'Field Notes',
-          blogDescription: 'Lab notebook: experiments, observations, and work-in-progress findings',
+          blogDescription: 'Lab notebook: experiments, observations, work-in-progress',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -52,7 +52,7 @@ const config: Config = {
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'ignore',
-          blogSidebarTitle: 'Recent Notes',
+          blogSidebarTitle: 'Recent',
           blogSidebarCount: 10,
           tags: 'tags.yml',
         },
@@ -74,12 +74,6 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'startHereSidebar',
-          position: 'left',
-          label: 'Start Here',
-        },
-        {
-          type: 'docSidebar',
           sidebarId: 'vrLabSidebar',
           position: 'left',
           label: 'VR Lab',
@@ -96,9 +90,10 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/about',
-          label: 'About',
+          type: 'docSidebar',
+          sidebarId: 'startHereSidebar',
           position: 'right',
+          label: 'Start Here',
         },
         {
           href: 'https://github.com/sudoflux',
@@ -111,34 +106,33 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Documentation',
           items: [
-            {label: 'Start Here', to: '/docs/start-here'},
             {label: 'VR Lab', to: '/docs/vr-lab'},
             {label: 'Homelab', to: '/docs/homelab'},
           ],
         },
         {
-          title: 'Field Notes',
+          title: 'Lab Notebook',
           items: [
-            {label: 'All Notes', to: '/field-notes'},
+            {label: 'Field Notes', to: '/field-notes'},
             {label: 'Tags', to: '/field-notes/tags'},
           ],
         },
         {
-          title: 'More',
+          title: 'Reference',
           items: [
-            {label: 'About', to: '/about'},
+            {label: 'Start Here', to: '/docs/start-here'},
             {label: 'GitHub', href: 'https://github.com/sudoflux'},
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} sudoflux. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} sudoflux`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['bash', 'json', 'yaml', 'toml', 'ini'],
+      additionalLanguages: ['bash', 'json', 'yaml', 'toml', 'ini', 'docker'],
     },
   } satisfies Preset.ThemeConfig,
 };

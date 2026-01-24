@@ -23,15 +23,26 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'vr-lab/index',
-      label: 'VR Lab Overview',
+      label: 'Overview',
     },
     {
       type: 'category',
-      label: 'Baselines',
+      label: 'Baseline',
       collapsed: false,
       items: [
-        'vr-lab/baseline-checklist',
+        'vr-lab/baseline/checklist',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Tuning',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'Tuning Guides',
+        description: 'Optimization and configuration guides',
+      },
+      items: [],
     },
     {
       type: 'category',
@@ -48,7 +59,7 @@ const sidebars: SidebarsConfig = {
       link: {
         type: 'generated-index',
         title: 'Game Settings',
-        description: 'Per-game VR settings and configurations',
+        description: 'Per-game configurations and settings',
       },
       items: [],
     },
@@ -58,7 +69,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'doc',
       id: 'homelab/index',
-      label: 'Homelab Overview',
+      label: 'Overview',
     },
     {
       type: 'doc',
@@ -75,7 +86,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Media Stack',
+      label: 'Media',
       collapsed: false,
       items: [
         'homelab/media/jellyfin-transcode',
@@ -83,12 +94,23 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Services',
+      label: 'Containers & Ops',
       collapsed: true,
       link: {
         type: 'generated-index',
-        title: 'Services',
-        description: 'Individual service documentation',
+        title: 'Containers & Operations',
+        description: 'Docker, orchestration, and operational practices',
+      },
+      items: [],
+    },
+    {
+      type: 'category',
+      label: 'Networking',
+      collapsed: true,
+      link: {
+        type: 'generated-index',
+        title: 'Networking',
+        description: 'Network configuration and architecture',
       },
       items: [],
     },
