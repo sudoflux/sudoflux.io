@@ -1,12 +1,41 @@
 ---
 sidebar_position: 1
 title: VR Lab
-description: Documentation for Pimax Super 50PPD tuning and VR configuration
+description: Documentation for VR tuning and sim racing configuration
 ---
 
 # VR Lab
 
-Documentation for high-end VR configuration, focusing on Pimax Super 50PPD.
+Documentation for high-end VR configuration and sim racing.
+
+## Hardware Reference
+
+### VR Headsets
+
+| HMD | Status | Notes |
+|-----|--------|-------|
+| Pimax Crystal Super 50PPD | Primary | QLED, uOLED engine pending |
+| Quest 3 | Secondary | Standalone/PCVR |
+
+### Compute (powerflux)
+
+| Component | Specification |
+|-----------|---------------|
+| CPU | AMD Ryzen 9950X3D |
+| RAM | 64GB DDR5 |
+| GPU | NVIDIA RTX 5090 |
+| OS | Windows 11 |
+| Tracking | SLAM (inside-out) |
+
+### Sim Rig
+
+| Component | Model |
+|-----------|-------|
+| Wheel Base | Asetek Invicta |
+| Pedals | Heusinkveld Ultimate+ |
+| Shifter | DS-8X |
+| Handbrake | TB-RS |
+| Cockpit | Next Level Racing FGT Elite (wheel plate edition) |
 
 ## Scope
 
@@ -16,15 +45,6 @@ This section covers:
 - **Tuning** — Optimization guides for specific scenarios
 - **Troubleshooting** — Systematic diagnosis of common issues
 - **Games** — Per-title settings and configurations
-
-## Hardware Reference
-
-| Component | Current |
-|-----------|---------|
-| HMD | Pimax Super 50PPD |
-| GPU | RTX 5090 |
-| CPU | Ryzen 9950X3D |
-| Tracking | SLAM (inside-out) |
 
 ## Document Standards
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 title: Baseline Checklist
-description: Verified starting configuration for Pimax Super 50PPD
+description: Verified starting configuration for Pimax Crystal Super 50PPD
 ---
 
 # Baseline Checklist
@@ -18,14 +18,15 @@ Known-good starting configuration before game-specific tuning.
 | SteamVR version | — |
 | Firmware | — |
 
-## Hardware
+## Hardware Tested
 
-| Component | Tested Configuration |
-|-----------|---------------------|
-| HMD | Pimax Super 50PPD |
+| Component | Specification |
+|-----------|---------------|
+| HMD | Pimax Crystal Super 50PPD |
 | GPU | RTX 5090 |
 | CPU | Ryzen 9950X3D |
-| RAM | — |
+| RAM | 64GB DDR5 |
+| Tracking | SLAM (inside-out) |
 
 ---
 
@@ -34,9 +35,9 @@ Known-good starting configuration before game-specific tuning.
 ### Physical Setup
 
 - [ ] Headset firmware current
-- [ ] Base stations powered and tracking
-- [ ] Controllers paired
+- [ ] Controllers paired (if using)
 - [ ] Cable connections secure
+- [ ] Tracking space clear of reflective surfaces
 
 ### Software State
 
