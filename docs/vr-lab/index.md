@@ -22,9 +22,9 @@ This section covers:
 | Component | Current |
 |-----------|---------|
 | HMD | Pimax Super 50PPD |
-| GPU | — |
-| CPU | — |
-| Tracking | — |
+| GPU | RTX 5090 |
+| CPU | Ryzen 9950X3D |
+| Tracking | SLAM (inside-out) |
 
 ## Document Standards
 

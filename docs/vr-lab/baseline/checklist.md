@@ -23,8 +23,8 @@ Known-good starting configuration before game-specific tuning.
 | Component | Tested Configuration |
 |-----------|---------------------|
 | HMD | Pimax Super 50PPD |
-| GPU | — |
-| CPU | — |
+| GPU | RTX 5090 |
+| CPU | Ryzen 9950X3D |
 | RAM | — |
 
 ---
