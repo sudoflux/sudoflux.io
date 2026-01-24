@@ -1,0 +1,38 @@
+# VR tags
+vr:
+  label: VR
+  description: Virtual reality related posts
+pimax:
+  label: Pimax
+  description: Pimax headset specific content
+steamvr:
+  label: SteamVR
+  description: SteamVR platform content
+
+# Homelab tags
+homelab:
+  label: Homelab
+  description: Home infrastructure posts
+docker:
+  label: Docker
+  description: Container and Docker content
+zfs:
+  label: ZFS
+  description: ZFS storage content
+jellyfin:
+  label: Jellyfin
+  description: Jellyfin media server content
+networking:
+  label: Networking
+  description: Network configuration and troubleshooting
+
+# General tags
+troubleshooting:
+  label: Troubleshooting
+  description: Debugging and problem-solving posts
+experiment:
+  label: Experiment
+  description: Unverified experiments and tests
+til:
+  label: TIL
+  description: Today I learned - small discoveries
