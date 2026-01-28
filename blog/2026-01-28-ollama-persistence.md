@@ -1,7 +1,7 @@
 ---
 slug: ollama-persistence-mode
 title: "Fixing Ollama hangs: NVIDIA persistence mode"
-authors: [josh]
+authors: [sudoflux]
 tags: [homelab, ai, ollama, nvidia]
 ---
 
