@@ -110,15 +110,13 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Networking',
-      collapsed: false,
+      collapsed: true,
       link: {
         type: 'generated-index',
         title: 'Networking',
         description: 'Network configuration and architecture',
       },
-      items: [
-        'homelab/network/unifi-config',
-      ],
+      items: [],
     },
     {
       type: 'category',
