@@ -93,3 +93,15 @@ If baseline fails, see [Stutter & Frametime Troubleshooting](/docs/vr-lab/troubl
 | Date | Change |
 |------|--------|
 | — | Initial baseline |
+
+---
+
+## OpenXR Runtime
+
+**Critical**: Set Pimax as the default OpenXR runtime.
+
+1. Open **Pimax Play**
+2. Go to Settings → OpenXR
+3. Click **Set as OpenXR Runtime**
+
+Both iRacing and AMS2 (and most modern VR titles) perform better on OpenXR than SteamVR. If games launch through SteamVR instead of natively, you've got the wrong runtime set.

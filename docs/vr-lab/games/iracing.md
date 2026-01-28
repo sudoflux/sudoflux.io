@@ -38,6 +38,7 @@ These settings are still being tuned. Check back for updates.
 | VR Mode | Foveated | Uses eye tracking to render periphery at lower res — massive perf gain |
 | MSAA | 4x | Good balance of clarity vs performance |
 | Number of Lights | 0 | Disables dynamic car lights — big FPS saver in night races |
+| Runtime | OpenXR | Set Pimax as OpenXR runtime in Pimax Play |
 
 ---
 

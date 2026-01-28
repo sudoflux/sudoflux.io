@@ -79,6 +79,7 @@ Particle and grass settings still being fine-tuned. Your mileage may vary depend
 |---------|-------|-------|
 | Render resolution | Native (6200×6200) | Let Pimax handle supersampling |
 | Motion Smoothing | Off | AMS2 handles reprojection poorly |
+| Runtime | OpenXR | Set Pimax as OpenXR runtime in Pimax Play |
 
 ---
 
