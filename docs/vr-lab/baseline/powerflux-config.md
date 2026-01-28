@@ -26,8 +26,8 @@ Primary VR and gaming workstation.
 
 | Setting | Value | Notes |
 |---------|-------|-------|
-| CCD Controller | Driver-controlled | Lets Windows/AMD chipset driver route threads to optimal CCD (V-Cache vs standard) |
-| Core Flex Profile | Gaming | Prioritizes single-thread boost for gaming workloads |
+| CCD Controller | Driver-controlled | Lets Windows/AMD chipset driver handle thread scheduling |
+| X3D Core Flex | Gaming profile | ASUS algorithm for X3D chips — optimizes scheduling between V-Cache CCD (cache-sensitive workloads) and standard CCD (frequency-sensitive). Gaming profile biases toward cache-heavy game threads. |
 | Curve Optimizer | -15 (all-core) | Undervolt for better thermals without sacrificing performance |
 
 ### Ryzen Master
