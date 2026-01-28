@@ -93,6 +93,10 @@ AMS2 uses OpenVR (SteamVR) natively, not OpenXR. To bypass SteamVR and run direc
 
 OpenComposite translates OpenVR calls → OpenXR, giving you the performance benefits of native OpenXR without SteamVR overhead.
 
+:::note No OpenXR Toolkit
+These settings don't require OpenXR Toolkit. Running vanilla OpenXR via Pimax + OpenComposite — no extra overlays or sharpening filters.
+:::
+
 ---
 
 ## Revision History
