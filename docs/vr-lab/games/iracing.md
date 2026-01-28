@@ -49,6 +49,8 @@ iRacing's foveated rendering uses your eye position (from the headset's eye trac
 
 This cuts GPU load significantly without perceptible quality loss. Requires eye tracking enabled in Pimax Play but **Quad Views disabled** — they don't play nice together.
 
+**With foveated rendering enabled, 90 Hz is achievable without heavy tweaking** — unlike AMS2 which struggles at that refresh rate.
+
 ---
 
 ## Revision History
