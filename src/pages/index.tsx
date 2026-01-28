@@ -28,10 +28,8 @@ function Introduction() {
     <section className={styles.section}>
       <div className={styles.container}>
         <p className={styles.intro}>
-          I'm Josh — a sysadmin turned DevOps engineer who spends too much time 
-          tinkering with homelabs and VR sim racing. This site is where I document 
-          what actually works, so I don't forget and maybe you don't have to figure 
-          it out from scratch either.
+          Documenting what actually works — so I don't forget and maybe you 
+          don't have to figure it out from scratch either.
         </p>
       </div>
     </section>
