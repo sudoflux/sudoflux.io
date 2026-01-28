@@ -52,8 +52,8 @@ This cuts GPU load significantly without perceptible quality loss. Requires eye 
 
 **With foveated rendering enabled, 90 Hz is achievable without heavy tweaking** — unlike AMS2 which struggles at that refresh rate.
 
-:::note No OpenXR Toolkit
-These settings don't require OpenXR Toolkit — just native OpenXR via Pimax Play.
+:::note OpenXR Toolkit
+Used only for performance overlay (FPS + GPU/CPU bound indicator). No visual tweaks enabled.
 :::
 
 ---
