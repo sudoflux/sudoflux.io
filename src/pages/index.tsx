@@ -19,10 +19,9 @@ function Introduction() {
     <section className={styles.section}>
       <div className={styles.container}>
         <p className={styles.intro}>
-          This site documents real-world tuning of two complex systems: high-end VR
-          (Pimax Super 50PPD focus) and production-style homelabs (storage, media,
-          containers, networking). Content is versioned, reproducible, and tested.
-          Docs are canonical. Field Notes are experiments.
+          Real-world tuning notes for high-end VR (Pimax Crystal Super + RTX 5090)
+          and homelab infrastructure (ZFS, Docker, media stack, local AI). 
+          Docs are verified. Field Notes are experiments. No fluff.
         </p>
       </div>
     </section>

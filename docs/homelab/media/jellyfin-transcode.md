@@ -12,9 +12,9 @@ Understanding when Jellyfin transcodes and how to optimize.
 
 | Field | Value |
 |-------|-------|
-| Last verified | — |
-| Jellyfin version | — |
-| GPU | — |
+| Last verified | 2026-01-28 |
+| Jellyfin version | latest (Docker) |
+| GPU | RTX 4090 (NVENC, driver 580.95) |
 
 ---
 

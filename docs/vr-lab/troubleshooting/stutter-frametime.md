@@ -12,9 +12,10 @@ Systematic approach to diagnosing VR performance problems.
 
 | Field | Value |
 |-------|-------|
-| Last verified | — |
-| PiTool version | — |
-| GPU driver | — |
+| Last verified | 2026-01-28 |
+| Headset | Pimax Crystal Super |
+| GPU | RTX 5090 (powerflux) |
+| GPU driver | 580.x |
 
 ---
 
