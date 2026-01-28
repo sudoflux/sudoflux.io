@@ -51,11 +51,33 @@ MFAA (Multi-Frame Anti-Aliasing) alternates AA sample patterns across consecutiv
 
 ---
 
+## Graphics Settings (72 Hz @ 6200×6200)
+
+These settings target stable 72 Hz at full 50PPD resolution.
+
+| Setting | Value | Notes |
+|---------|-------|-------|
+| Shadows | Medium | Major performance saver |
+| Reflections | Medium | Minor visual loss, big FPS gain |
+| Particle Density | Medium | No noticeable difference in VR, frees headroom |
+| Grass | High | Can drop to Low for 90 Hz |
+| Everything else | High–Ultra | Mix to taste |
+
+:::tip 90 Hz Target
+Running 90 Hz at 6200×6200 is brutal. Drop **Grass** and **Particle Effects** to Low first — they're the biggest gains with least visual impact in VR.
+:::
+
+:::note Work in Progress
+Particle and grass settings still being fine-tuned. Your mileage may vary depending on track/weather.
+:::
+
+---
+
 ## Other Recommended Settings
 
 | Setting | Value | Notes |
 |---------|-------|-------|
-| Render resolution | Native | Let Pimax handle supersampling |
+| Render resolution | Native (6200×6200) | Let Pimax handle supersampling |
 | Motion Smoothing | Off | AMS2 handles reprojection poorly |
 
 ---
