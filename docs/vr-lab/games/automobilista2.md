@@ -79,7 +79,19 @@ Particle and grass settings still being fine-tuned. Your mileage may vary depend
 |---------|-------|-------|
 | Render resolution | Native (6200×6200) | Let Pimax handle supersampling |
 | Motion Smoothing | Off | AMS2 handles reprojection poorly |
-| Runtime | OpenXR | Set Pimax as OpenXR runtime in Pimax Play |
+| Runtime | OpenXR via **OpenComposite** | AMS2 is OpenVR-native; use OpenComposite to translate to OpenXR |
+
+---
+
+## OpenComposite Setup
+
+AMS2 uses OpenVR (SteamVR) natively, not OpenXR. To bypass SteamVR and run directly on Pimax's OpenXR runtime, use **OpenComposite**:
+
+1. Download [OpenComposite](https://gitlab.com/znixian/OpenOVR/-/releases)
+2. Extract to AMS2 install folder
+3. Run `OpenComposite.exe` or copy the DLL override
+
+OpenComposite translates OpenVR calls → OpenXR, giving you the performance benefits of native OpenXR without SteamVR overhead.
 
 ---
 
