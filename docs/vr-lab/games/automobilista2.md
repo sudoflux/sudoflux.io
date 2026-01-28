@@ -40,6 +40,17 @@ MFAA (Multi-Frame Anti-Aliasing) alternates AA sample patterns across consecutiv
 
 ---
 
+## Refresh Rate & Display Settings
+
+| Setting | Location | Value | Notes |
+|---------|----------|-------|-------|
+| Refresh Rate | Pimax Play | 72 Hz | Prioritizes stable frametimes over high refresh |
+| Brightness | Pimax Play | -1 | Reduces eye strain on OLED panel |
+| Contrast | Pimax Play | -1 | Better dark detail, less crushing |
+| Exposure Compensation | In-game (Video Settings) | 0.90 | Tames overblown highlights |
+
+---
+
 ## Other Recommended Settings
 
 | Setting | Value | Notes |
