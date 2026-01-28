@@ -1,19 +1,19 @@
 ---
 sidebar_position: 1
 title: Automobilista 2
-description: VR settings for AMS2 on Pimax Crystal Super
+description: VR settings for AMS2 on Pimax Crystal Super 50PPD
 ---
 
 # Automobilista 2
 
-VR-optimized settings for Pimax Crystal Super + RTX 5090.
+VR-optimized settings for Pimax Crystal Super (50PPD mode) + RTX 5090.
 
 ## Verification Status
 
 | Field | Value |
 |-------|-------|
 | Last verified | 2026-01-28 |
-| Headset | Pimax Crystal Super |
+| Headset | Pimax Crystal Super (50PPD mode) |
 | GPU | RTX 5090 |
 
 ---
