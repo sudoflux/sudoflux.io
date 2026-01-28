@@ -87,7 +87,7 @@ Particle and grass settings still being fine-tuned. Your mileage may vary depend
 
 AMS2 uses OpenVR (SteamVR) natively, not OpenXR. To bypass SteamVR and run directly on Pimax's OpenXR runtime, use **OpenComposite**:
 
-1. Download [OpenComposite](https://gitlab.com/znixian/OpenOVR/-/releases)
+1. Download [OpenComposite (64-bit DLL)](https://znix.xyz/OpenComposite/download.php?arch=x64&branch=openxr)
 2. Extract to AMS2 install folder
 3. Run `OpenComposite.exe` or copy the DLL override
 
