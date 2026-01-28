@@ -2,6 +2,8 @@
  * sudoflux.io - Engineering documentation theme
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
   --ifm-color-primary: #4a9eff;
   --ifm-color-primary-dark: #2b8bff;
@@ -20,18 +22,18 @@
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #6bb3ff;
-  --ifm-color-primary-dark: #4aa2ff;
-  --ifm-color-primary-darker: #3a99ff;
-  --ifm-color-primary-darkest: #0a7aff;
-  --ifm-color-primary-light: #8cc4ff;
-  --ifm-color-primary-lighter: #9dcfff;
-  --ifm-color-primary-lightest: #cfe7ff;
-  --ifm-background-color: #0d1117;
-  --ifm-background-surface-color: #161b22;
-  --ifm-navbar-background-color: #0d1117;
-  --ifm-footer-background-color: #0d1117;
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+  --ifm-color-primary: #22d3ee;
+  --ifm-color-primary-dark: #0bc5e0;
+  --ifm-color-primary-darker: #0ab8d3;
+  --ifm-color-primary-darkest: #0897ae;
+  --ifm-color-primary-light: #45dbf1;
+  --ifm-color-primary-lighter: #52def2;
+  --ifm-color-primary-lightest: #7ee7f6;
+  --ifm-background-color: #0a0a0f;
+  --ifm-background-surface-color: #0d0d14;
+  --ifm-navbar-background-color: transparent;
+  --ifm-footer-background-color: #0a0a0f;
+  --docusaurus-highlighted-code-line-bg: rgba(34, 211, 238, 0.1);
 }
 
 /* Typography refinements */
