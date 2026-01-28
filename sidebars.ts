@@ -31,6 +31,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'vr-lab/baseline/checklist',
+        'vr-lab/baseline/powerflux-config',
       ],
     },
     {
@@ -55,13 +56,16 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Games',
-      collapsed: true,
+      collapsed: false,
       link: {
         type: 'generated-index',
         title: 'Game Settings',
         description: 'Per-game configurations and settings',
       },
-      items: [],
+      items: [
+        'vr-lab/games/automobilista2',
+        'vr-lab/games/iracing',
+      ],
     },
   ],
 
