@@ -8,7 +8,16 @@ function HomepageHeader() {
     <header className={styles.hero}>
       <div className={styles.container}>
         <h1 className={styles.title}>sudoflux</h1>
-        <p className={styles.subtitle}>Operational notes for VR and homelab systems</p>
+        <p className={styles.subtitle}>Homelab · DevOps · VR · Documenting the journey</p>
+        <div className={styles.heroLinks}>
+          <a href="https://github.com/sudoflux" target="_blank" rel="noopener noreferrer" className={styles.heroLink}>
+            GitHub
+          </a>
+          <span className={styles.linkSep}>·</span>
+          <a href="https://www.youtube.com/@Josh-Fletcher" target="_blank" rel="noopener noreferrer" className={styles.heroLink}>
+            YouTube
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -19,9 +28,10 @@ function Introduction() {
     <section className={styles.section}>
       <div className={styles.container}>
         <p className={styles.intro}>
-          Real-world tuning notes for high-end VR (Pimax Crystal Super + RTX 5090)
-          and homelab infrastructure (ZFS, Docker, media stack, local AI). 
-          Docs are verified. Field Notes are experiments. No fluff.
+          I'm Josh — a sysadmin turned DevOps engineer who spends too much time 
+          tinkering with homelabs and VR sim racing. This site is where I document 
+          what actually works, so I don't forget and maybe you don't have to figure 
+          it out from scratch either.
         </p>
       </div>
     </section>
@@ -35,48 +45,67 @@ function EntryPoints() {
         <div className={styles.cardGrid}>
           <Link to="/docs/vr-lab" className={styles.card}>
             <div className={styles.cardContent}>
-              <h2>Enter the VR Lab</h2>
+              <h2>🥽 VR Lab</h2>
               <p>
-                Baselines, tuning guides, troubleshooting, and per-game settings
-                for Pimax Super 50PPD and high-end VR configurations.
+                Pimax Crystal Super, Quest 3, sim racing settings. 
+                Baselines, per-game configs, and troubleshooting.
               </p>
             </div>
           </Link>
           <Link to="/docs/homelab" className={styles.card}>
             <div className={styles.cardContent}>
-              <h2>Enter the Homelab</h2>
+              <h2>🖥️ Homelab</h2>
               <p>
-                Architecture, ZFS storage, media stack, container operations,
-                networking, and infrastructure documentation.
+                ZFS storage, networking, media stack, local AI, 
+                and infrastructure documentation.
               </p>
             </div>
           </Link>
         </div>
-        <div className={styles.secondaryLink}>
-          <Link to="/field-notes">Field Notes (lab notebook) →</Link>
+        <div className={styles.cardGrid}>
+          <Link to="/field-notes" className={styles.card}>
+            <div className={styles.cardContent}>
+              <h2>📝 Field Notes</h2>
+              <p>
+                Short-form learnings, gotchas, and experiments. 
+                The lab notebook.
+              </p>
+            </div>
+          </Link>
+          <Link to="/docs/start-here" className={styles.card}>
+            <div className={styles.cardContent}>
+              <h2>🚀 Start Here</h2>
+              <p>
+                New? Start with the baselines and philosophy 
+                behind how this site is organized.
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-function StartHere() {
+function CurrentSetup() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h3 className={styles.sectionTitle}>Start Here</h3>
-        <ul className={styles.startList}>
-          <li>
-            <Link to="/docs/vr-lab/baseline/checklist">VR Baseline Checklist</Link>
-            <span className={styles.dash}>—</span>
-            <span className={styles.description}>Known-good starting configuration</span>
-          </li>
-          <li>
-            <Link to="/docs/homelab/architecture">Homelab Architecture Overview</Link>
-            <span className={styles.dash}>—</span>
-            <span className={styles.description}>Infrastructure design and layout</span>
-          </li>
-        </ul>
+        <h3 className={styles.sectionTitle}>Current Setup</h3>
+        <div className={styles.setupGrid}>
+          <div className={styles.setupItem}>
+            <strong>VR Rig (powerflux)</strong>
+            <span>Ryzen 9950X3D · RTX 5090 · Pimax Crystal Super</span>
+          </div>
+          <div className={styles.setupItem}>
+            <strong>Server (sudoflux)</strong>
+            <span>Ryzen 9950X · RTX 4090 · 96GB · ~60TB ZFS</span>
+          </div>
+          <div className={styles.setupItem}>
+            <strong>Network</strong>
+            <span>UniFi Dream Machine SE · 10GbE backbone</span>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -87,9 +116,9 @@ function StatusFooter() {
     <footer className={styles.statusFooter}>
       <div className={styles.container}>
         <div className={styles.statusLine}>
-          <span>Last site update: January 2026</span>
+          <span>Last updated: January 2026</span>
           <span className={styles.separator}>·</span>
-          <span>Current focus: Pimax Super 50PPD + Linux homelab</span>
+          <span>Built with Docusaurus</span>
         </div>
       </div>
     </footer>
@@ -99,13 +128,13 @@ function StatusFooter() {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="Operational Notes"
-      description="Documentation for VR tuning and homelab infrastructure">
+      title="Home"
+      description="Homelab and VR documentation by sudoflux">
       <HomepageHeader />
       <main>
         <Introduction />
         <EntryPoints />
-        <StartHere />
+        <CurrentSetup />
       </main>
       <StatusFooter />
     </Layout>
