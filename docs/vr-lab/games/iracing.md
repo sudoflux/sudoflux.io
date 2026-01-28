@@ -8,6 +8,10 @@ description: VR settings for iRacing on Pimax Crystal Super 50PPD
 
 VR-optimized settings for Pimax Crystal Super (50PPD mode) + RTX 5090.
 
+:::caution Work in Progress
+These settings are still being tuned. Check back for updates.
+:::
+
 ## Verification Status
 
 | Field | Value |
