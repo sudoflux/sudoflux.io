@@ -274,7 +274,7 @@ function Footer() {
 export default function Home(): JSX.Element {
   return (
     <Layout
-      title="Home"
+      title=""
       description="Infrastructure, AI, and VR documentation"
     >
       <HomepageHeader />

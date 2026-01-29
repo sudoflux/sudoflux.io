@@ -1,6 +1,6 @@
 ---
-title: AI Assistant (Molt)
-description: Local AI assistant with persistent memory and context recovery
+title: AI Assistants (Molt & miniflux)
+description: Multi-gateway AI assistants with shared memory and context recovery
 ---
 
 # AI Assistant Setup
@@ -182,6 +182,42 @@ The daemon watches for `compaction-pending`, flushes any pending summaries, then
 ├── memory/        # Daily notes (YYYY-MM-DD.md)
 └── vault/         # Obsidian second brain (synced)
 ```
+
+## Multi-Gateway Setup
+
+As of 2026-01-29, there are two AI assistant gateways running:
+
+| Gateway | Host | Purpose |
+|---------|------|---------|
+| **Molt** | sudoflux (Linux) | Primary — homelab, local AI, heavy lifting |
+| **miniflux** | Mac Mini (macOS) | Apple ecosystem — iMessage, Shortcuts, HomeKit |
+
+### Shared Memory
+
+Both gateways share context through **Syncthing**:
+
+- `~/clawd/memory/` syncs bidirectionally
+- Daily notes appear on both machines
+- Each maintains their own identity (`IDENTITY.md`, `TOOLS.md`)
+
+### Why Two Gateways?
+
+- **Apple APIs require macOS** — iMessage, Shortcuts, and HomeKit don't work over SSH relay
+- **Peer relationship** — not master/subordinate, actual siblings
+- **Resilience** — one can go down without affecting the other
+- **Shared subscription** — both use the same Claude Max subscription
+
+### SSH Access
+
+```bash
+# From sudoflux
+ssh miniflux
+
+# From miniflux  
+ssh sudoflux
+```
+
+---
 
 ## Why This Setup?
 
