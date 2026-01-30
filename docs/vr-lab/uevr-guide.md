@@ -41,7 +41,7 @@ Before starting, ensure you have:
 [UEVR](https://uevr.io/) (Universal Unreal Engine VR Mod) converts flat Unreal Engine 4/5 games into VR experiences. This guide covers optimized settings for the **Pimax Crystal Super at 50 PPD** with an **RTX 5090**.
 
 :::danger 50 PPD is Demanding
-The 50 PPD engine pushes ~5K×5K per eye. Even an RTX 5090 needs careful optimization. Don't expect to max everything - target stable frames over pretty screenshots.
+The 50 PPD engine pushes **6200×6200 per eye** at 100% render scale. Even an RTX 5090 needs careful optimization. Don't expect to max everything - target stable frames over pretty screenshots.
 :::
 
 ## Hardware Reference
