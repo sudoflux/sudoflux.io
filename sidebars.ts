@@ -43,7 +43,9 @@ const sidebars: SidebarsConfig = {
         title: 'Tuning Guides',
         description: 'Optimization and configuration guides',
       },
-      items: [],
+      items: [
+        'vr-lab/uevr-guide',
+      ],
     },
     {
       type: 'category',
