@@ -11,9 +11,38 @@ status: WIP
 This guide is actively being tested and updated. Settings may change as we validate performance.
 :::
 
+## TL;DR Quick Win Checklist
+
+1. **Use OpenXR** (not OpenVR) for Pimax native runtime
+2. **Start with Native Stereo** rendering, fall back to Synced Sequential if crashes
+3. **Enable DLSS** in-game when available
+4. **Disable motion blur and TAA** (if using DLSS)
+5. **Keep render scales at 1.0** and reduce in-game settings first
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+| Software | Version | Notes |
+|----------|---------|-------|
+| UEVR | Latest (1.0.0+) | [Download](https://github.com/praydog/UEVR/releases) |
+| Pimax Play | Latest | [Download](https://pimax.com/pimax-play/) |
+| PimaxXR | Enabled | Set as default OpenXR runtime |
+| GPU Drivers | Latest | NVIDIA 570+ recommended for 5090 |
+
+**OpenXR Runtime Setup:**
+1. Open Pimax Play
+2. Go to Settings → OpenXR
+3. Set PimaxXR as default runtime
+4. Verify in Windows: Settings → Mixed Reality → OpenXR shows Pimax
+
 ## Overview
 
 [UEVR](https://uevr.io/) (Universal Unreal Engine VR Mod) converts flat Unreal Engine 4/5 games into VR experiences. This guide covers optimized settings for the **Pimax Crystal Super at 50 PPD** with an **RTX 5090**.
+
+:::danger 50 PPD is Demanding
+The 50 PPD engine pushes ~5K×5K per eye. Even an RTX 5090 needs careful optimization. Don't expect to max everything - target stable frames over pretty screenshots.
+:::
 
 ## Hardware Reference
 
@@ -22,6 +51,28 @@ This guide is actively being tested and updated. Settings may change as we valid
 | Headset | Pimax Crystal Super (50 PPD mode) |
 | GPU | RTX 5090 |
 | CPU | Ryzen 9950X3D |
+
+## Expected Performance
+
+Realistic targets at 50 PPD with RTX 5090:
+
+| Game Type | Target FPS | Notes |
+|-----------|------------|-------|
+| Indie/Stylized (Palworld) | 90 Hz native | Should hit without smoothing |
+| AA Titles (Lies of P) | 72-90 Hz | May need Smart Smoothing |
+| AAA Heavy (Hogwarts Legacy) | 45-72 Hz | Smart Smoothing likely required |
+
+**If you can't hit 45 FPS consistently:** Drop to Normal FOV or reduce render scale to 0.9.
+
+## Common Mistakes
+
+:::warning Avoid These
+- **Stacking upscaling**: Don't use DLSS + UEVR render scale + Pimax render scale all together
+- **Leaving RT on**: Ray tracing murders VR framerates - disable it
+- **Wrong OpenXR runtime**: Must be PimaxXR, not SteamVR or WMR
+- **TAA + DLSS**: Double temporal = double blur - pick one
+- **PP when not needed**: Parallel Projection costs 20% - only enable if you see edge distortion
+:::
 
 ## Quick Start Settings
 
@@ -76,17 +127,27 @@ For 50 PPD mode:
 - Consider Normal FOV for demanding titles
 - Small FOV only if desperate for frames
 
+### Smart Smoothing
+
+When you can't hit native 90Hz:
+
+- **Smart Smoothing On**: Interpolates to 90Hz from 45 FPS
+- Works well for slower-paced games
+- Fast action games may show artifacts
+- Better than reprojection in most cases
+
 ## Performance Optimization
 
-### In-Game Settings
+### In-Game Settings Priority
 
-Before UEVR tweaks, optimize the base game:
+Before UEVR tweaks, optimize the base game (in order of impact):
 
-1. **Disable TAA** if using DLSS (prevents double-blur)
-2. **Enable DLSS/FSR2** when available (works with Native Stereo)
-3. **Reduce shadow quality** - heavy VR cost, minimal visual gain
-4. **Lower volumetric effects** - fog/clouds murder framerates
-5. **Disable motion blur** - useless in VR, wastes GPU
+1. **Disable Ray Tracing** - massive gain, minimal visual loss in VR
+2. **Reduce shadow quality** - heavy VR cost, minimal visual gain
+3. **Lower volumetric effects** - fog/clouds murder framerates
+4. **Disable motion blur** - useless in VR, wastes GPU
+5. **Enable DLSS/FSR2** when available (works with Native Stereo)
+6. **Disable TAA** if using DLSS (prevents double-blur)
 
 ### UEVR Compatibility Settings
 
@@ -120,29 +181,91 @@ For smooth 90Hz on Crystal Super:
 These profiles are pending validation. Check back for updates.
 :::
 
-### Template
+### Profile Template
 
-```
+```yaml
 Game: [Name]
-Engine: UE4/UE5
-Tested: [Date]
-Status: Working/Partial/Broken
+Engine: UE4 / UE5
+UEVR Version: [x.x.x]
+Tested: [YYYY-MM-DD]
+Status: ✅ Working / ⚠️ Partial / ❌ Broken
 
-Rendering Method: [Native Stereo/Synced Sequential/AFR]
-PP Required: Yes/No
-Known Issues: [List]
+# Pimax Settings (Pimax Play)
+FOV: Large / Normal / Small
+Parallel Projection: Yes / No
+Smart Smoothing: Yes / No
+Render Scale: [1.0]
 
-Recommended Settings:
-- [Setting]: [Value]
+# UEVR Settings
+Rendering Method: Native Stereo / Synced Sequential / AFR
+OpenXR_ResolutionScale: [1.0]
+VR_DecoupledPitch: true
+
+# In-Game Settings
+Resolution: [Native / Custom]
+DLSS/FSR: [Quality / Balanced / Performance / Off]
+Ray Tracing: Off
+Shadows: [Low / Medium / High]
+
+# Performance
+Typical FPS: [XX] @ [FOV]
+Frame Time: [XX.X ms]
+
+# Known Issues
+- [Issue 1]
+- [Issue 2]
+
+# Notes
+[Any additional observations]
+```
+
+### Example: Placeholder Game
+
+```yaml
+Game: Example Game (PLACEHOLDER)
+Engine: UE5
+UEVR Version: 1.0.0
+Tested: 2026-01-30
+Status: ⚠️ Partial
+
+# Pimax Settings
+FOV: Normal
+Parallel Projection: No
+Smart Smoothing: Yes
+Render Scale: 1.0
+
+# UEVR Settings
+Rendering Method: Native Stereo
+OpenXR_ResolutionScale: 1.0
+VR_DecoupledPitch: true
+
+# In-Game Settings
+Resolution: Native
+DLSS: Quality
+Ray Tracing: Off
+Shadows: Medium
+
+# Performance
+Typical FPS: 55-70 @ Normal FOV
+Frame Time: 14-18ms
+
+# Known Issues
+- HUD offset requires manual adjustment
+- Cutscenes render in 2D
+
+# Notes
+Smart Smoothing compensates well. Playable but not perfect.
 ```
 
 ### Games to Test
 
 - [ ] Hogwarts Legacy
-- [ ] Lies of P
+- [ ] Lies of P  
 - [ ] Atomic Heart
 - [ ] Palworld
 - [ ] Remnant 2
+- [ ] Star Wars Jedi: Survivor
+- [ ] Dead Space (2023)
 
 ## Troubleshooting
 
@@ -152,13 +275,16 @@ Recommended Settings:
 2. Try different injection timing (early/late)
 3. Disable overlays (Discord, Steam, etc.)
 4. Check antivirus isn't blocking
+5. Verify game uses Unreal Engine (`-dx12` / `-dx11` launch flags may help)
 
 ### Terrible Performance
 
 1. Check in-game settings first (disable RT, lower shadows)
-2. Try Synchronized Sequential instead of Native Stereo
-3. Reduce OpenXR_ResolutionScale to 0.8
-4. Enable DLSS if available
+2. Verify correct OpenXR runtime (PimaxXR, not SteamVR)
+3. Try Synchronized Sequential instead of Native Stereo
+4. Reduce OpenXR_ResolutionScale to 0.8
+5. Enable DLSS if available
+6. Drop to Normal FOV
 
 ### Motion Sickness
 
@@ -174,13 +300,27 @@ VR_AimInterp = true            # Smooth aim transitions
 2. Check `VR_ControllersAllowed = true`
 3. Try switching OpenVR ↔ OpenXR
 
+### Black Screen / No VR Output
+
+1. Check headset is detected in Pimax Play
+2. Verify OpenXR runtime is PimaxXR
+3. Try restarting Pimax service
+4. Some games need windowed mode first, then switch to VR
+
+## Screenshots
+
+:::note Coming Soon
+Screenshots of settings and in-game examples will be added after testing.
+:::
+
 ## Resources
 
 - [UEVR Official Docs](https://praydog.github.io/uevr-docs/)
 - [Flat2VR Discord](https://discord.gg/flat2vr) - Game-specific profiles
 - [UEVR GitHub](https://github.com/praydog/UEVR)
 - [Pimax Forums](https://community.pimax.com/) - Headset-specific tips
+- [VRPUPU Settings Guide](https://vrpupu.us/2025/08/02/uevr-advanced-settings-guide-2025/) - Deep dive on all 150+ settings
 
 ## Changelog
 
-- **2026-01-30**: Initial WIP draft
+- **2026-01-30**: Initial WIP draft - added prerequisites, expected performance, common mistakes, example profile template
