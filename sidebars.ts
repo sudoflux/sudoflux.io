@@ -124,6 +124,20 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'AI Agents',
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+        title: 'AI Agents',
+        description: 'AI assistant setup, security, and operations',
+      },
+      items: [
+        'homelab/ai/assistant',
+        'homelab/ai/mac-mini-hardening',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Troubleshooting',
       collapsed: true,
       link: {
