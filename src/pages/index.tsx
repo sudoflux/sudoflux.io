@@ -239,7 +239,7 @@ function SystemStatus() {
         >
           <div className={styles.statusItem}>
             <span className={styles.statusLabel}>COMPUTE</span>
-            <span className={styles.statusValue}>9950X · 4090</span>
+            <span className={styles.statusValue}>9950X3D · 5090 + 4090 · 3-node Proxmox</span>
           </div>
           <div className={styles.statusItem}>
             <span className={styles.statusLabel}>STORAGE</span>
@@ -264,7 +264,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <span className={styles.footerText}>
-          Built with Molt 🦞
+          sudoflux · infrastructure notes
         </span>
       </div>
     </footer>
