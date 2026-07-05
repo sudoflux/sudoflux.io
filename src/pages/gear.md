@@ -23,7 +23,7 @@ Affiliate links may be added later, but they do not change the label. If somethi
 
 | Item | Status | Notes |
 | --- | --- | --- |
-| NVIDIA RTX 4090 | **Owned / current** | Practical local-AI card because 24GB VRAM can run useful quantized models, but it should be treated like one shared model service rather than a zoo of resident large models. |
+| NVIDIA RTX 4090 | **Owned / current** | Practical local-AI card because 24GB VRAM can run useful quantized models, but it should be treated like one shared model service rather than a zoo of resident large models. [Read the 4090 local-AI guide](/docs/homelab/ai/rtx-4090-local-ai). |
 | NVIDIA RTX 5090 | **Owned / current** | Used in the high-end VR / workstation lane. Needs a separate, current page before being treated as a general AI recommendation. |
 | Ollama | **Owned / current** | Local model serving layer. See the field note on NVIDIA persistence mode for a real failure/fix. |
 | Qwen3 30B-class quantized model | **Owned / current** | Used as the local utility model lane for memory/compression experiments. Exact public recommendation needs a dedicated versioned page. |

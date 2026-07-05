@@ -132,6 +132,7 @@ const sidebars: SidebarsConfig = {
         description: 'AI assistant setup, security, and operations',
       },
       items: [
+        'homelab/ai/rtx-4090-local-ai',
         'homelab/ai/assistant',
         'homelab/ai/mac-mini-hardening',
       ],
