@@ -13,6 +13,15 @@ steamvr:
 homelab:
   label: Homelab
   description: Home infrastructure posts
+ai:
+  label: AI
+  description: Local AI and assistant operations
+ollama:
+  label: Ollama
+  description: Ollama model serving notes
+nvidia:
+  label: NVIDIA
+  description: NVIDIA GPU and driver notes
 docker:
   label: Docker
   description: Container and Docker content

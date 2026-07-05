@@ -1,31 +1,47 @@
 ---
 title: About
-description: About this documentation site
+description: About sudoflux and its editorial model.
 ---
 
 # About
 
-## Purpose
+sudoflux is a working notebook for expensive nerd infrastructure:
 
-This site documents operational knowledge for:
+- local AI systems and assistant operations
+- homelab storage, networking, containers, and media services
+- high-end VR and sim racing rigs
 
-- **VR systems** — Pimax Super 50PPD configuration and tuning
-- **Homelab infrastructure** — Storage, media, containers, networking
+The useful parts are the tested configs, failure notes, and caveats. The site is being reshaped away from a private docs landing page and toward public guides that can be useful without becoming AI-generated review slop.
 
-Content is versioned, reproducible, and tested.
+## Editorial model
 
-## Content Model
+Pages should be explicit about evidence:
 
-| Type | Purpose | Location |
-|------|---------|----------|
-| Docs | Verified procedures | VR Lab, Homelab sections |
-| Field Notes | Experiments, observations | Field Notes section |
+| Label | Meaning |
+| --- | --- |
+| **Owned / current** | In the active lab right now. |
+| **Owned / previous** | Used before, retired, replaced, or moved. |
+| **Rejected / avoid** | Tested or considered and intentionally rejected. |
+| **Researched candidate** | Not personally tested yet. |
+| **Needs confirmation** | Draft note waiting for Josh to verify. |
 
-## Maintenance
+## What belongs here
 
-- Docs updated when verified
-- Stale content marked or removed
-- Field Notes promoted to Docs when verified
+Good pages:
+
+- exact symptoms and fixes
+- parts lists with caveats
+- config baselines
+- “what broke” notes
+- update dates and tested versions
+- honest “not tested yet” sections
+
+Bad pages:
+
+- fake testimonials
+- invented benchmark numbers
+- generic buyer-guide filler
+- pretending to own hardware that was only researched
 
 ## Source
 

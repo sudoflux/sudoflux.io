@@ -7,7 +7,7 @@ tags: [homelab, ai, ollama, nvidia]
 
 Ollama was randomly hanging during inference. GPU would go idle mid-conversation, requests would timeout.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Symptoms
 

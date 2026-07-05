@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'sudoflux',
-  tagline: 'Operational notes for VR and homelab systems',
+  tagline: 'Tested notes for local AI, homelab infrastructure, and VR rigs',
   favicon: 'img/favicon.svg',
 
   future: {
@@ -85,6 +85,11 @@ const config: Config = {
           label: 'Homelab',
         },
         {
+          to: '/gear',
+          label: 'Gear',
+          position: 'left',
+        },
+        {
           to: '/field-notes',
           label: 'Field Notes',
           position: 'left',
@@ -123,6 +128,10 @@ const config: Config = {
           title: 'Reference',
           items: [
             {label: 'Start Here', to: '/docs/start-here'},
+            {label: 'Recommended Gear', to: '/gear'},
+            {label: 'About', to: '/about'},
+            {label: 'Disclosure', to: '/disclosure'},
+            {label: 'Privacy', to: '/privacy'},
             {label: 'GitHub', href: 'https://github.com/sudoflux'},
           ],
         },

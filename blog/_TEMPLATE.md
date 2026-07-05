@@ -11,7 +11,7 @@ tags: [tag1, tag2]
 
 Brief summary (shown in listings).
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Context
 
