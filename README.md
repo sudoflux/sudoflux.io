@@ -110,9 +110,12 @@ npm run build
 ### Deploy to Self-Hosted Nginx
 
 ```bash
-# Copy build to web root
-rsync -av build/ /var/www/sudoflux.io/
+./deploy.sh
 ```
+
+The deployment script builds locally, stages the static output on `sudoflux`
+over SSH, installs it into `/var/www/sudoflux.io`, validates the remote nginx
+configuration, and verifies the deployed homepage checksum.
 
 ### GitHub Pages (Alternative)
 
