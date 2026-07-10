@@ -11,7 +11,7 @@ sudoflux is a working notebook for expensive nerd infrastructure:
 - homelab storage, networking, containers, and media services
 - high-end VR and sim racing rigs
 
-The useful parts are the tested configs, failure notes, and caveats. The site is being reshaped away from a private docs landing page and toward public guides that can be useful without becoming AI-generated review slop.
+The useful parts are the tested configs, failure notes, and caveats. The site is evolving from a private documentation landing page into public guides grounded in working systems.
 
 ## Editorial model
 
@@ -27,21 +27,15 @@ Pages should be explicit about evidence:
 
 ## What belongs here
 
-Good pages:
+Pages should include:
 
 - exact symptoms and fixes
 - parts lists with caveats
 - config baselines
 - “what broke” notes
 - update dates and tested versions
-- honest “not tested yet” sections
-
-Bad pages:
-
-- fake testimonials
-- invented benchmark numbers
-- generic buyer-guide filler
-- pretending to own hardware that was only researched
+- clear “not tested yet” sections
+- evidence labels that distinguish firsthand use from researched candidates
 
 ## Source
 

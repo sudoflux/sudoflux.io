@@ -36,7 +36,7 @@ Primary VR and gaming workstation.
 |---------|-------|
 | Overclock offset | +200 MHz |
 
-:::caution Mixed Configuration
+:::caution[Mixed Configuration]
 Running both BIOS Curve Optimizer and Ryzen Master overclock can cause conflicts. Ryzen Master settings don't persist across reboots and may clash with BIOS-level tuning. Consider consolidating all CPU settings into BIOS for stability.
 :::
 

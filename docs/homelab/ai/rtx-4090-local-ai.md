@@ -6,8 +6,8 @@ sidebar_position: 3
 
 # RTX 4090 local AI server guide
 
-:::info Evidence level
-**Owned / current.** This page is based on a real homelab local-AI lane using an RTX 4090 with Ollama and 30B-class quantized models. It is not a benchmark lab and does not pretend to test every card.
+:::info[Evidence level]
+**Owned / current.** This page is based on a real homelab local-AI lane using an RTX 4090 with Ollama and 30B-class quantized models. Its scope is operational experience from this lab and should be read in that hardware and software context.
 :::
 
 The RTX 4090 is still the practical local-AI card because it gives you 24GB of VRAM without moving into datacenter-card pricing. The important caveat is that 24GB is not magic. It is enough to run useful local models, but not enough to casually keep a whole zoo of large models resident at once.
@@ -51,7 +51,7 @@ Expect friction when you try to combine:
 - interactive assistant traffic;
 - unrelated GPU workloads.
 
-That is where people get fake-review-site brain rot: they say “24GB runs local AI” and skip the operational detail. It does run local AI. It just still needs scheduling, limits, and a realistic mental model.
+“24GB runs local AI” is only the starting point. Stable service still depends on scheduling, model limits, context size, and a realistic VRAM budget.
 
 ## Recommended operating model
 

@@ -9,7 +9,7 @@ draft: true
 
 Systematic approach to diagnosing [category] issues.
 
-:::info Last Verified
+:::info[Last Verified]
 **Date**: YYYY-MM-DD  
 **Relevant Versions**: X.X.X
 :::

@@ -63,11 +63,11 @@ These settings target stable 72 Hz at full 50PPD resolution.
 | Grass | High | Can drop to Low for 90 Hz |
 | Everything else | High–Ultra | Mix to taste |
 
-:::tip 90 Hz Target
+:::tip[90 Hz Target]
 Running 90 Hz at 6200×6200 is brutal. Drop **Grass** and **Particle Effects** to Low first — they're the biggest gains with least visual impact in VR.
 :::
 
-:::note Work in Progress
+:::note[Work in Progress]
 Particle and grass settings still being fine-tuned. Your mileage may vary depending on track/weather.
 :::
 
@@ -93,7 +93,7 @@ AMS2 uses OpenVR (SteamVR) natively, not OpenXR. To bypass SteamVR and run direc
 
 OpenComposite translates OpenVR calls → OpenXR, giving you the performance benefits of native OpenXR without SteamVR overhead.
 
-:::note OpenXR Toolkit
+:::note[OpenXR Toolkit]
 Used only for performance overlay (FPS + GPU/CPU bound indicator). No visual tweaks enabled — no sharpening, no Toolkit foveated rendering.
 :::
 

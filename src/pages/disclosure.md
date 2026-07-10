@@ -17,7 +17,7 @@ If a product is only a researched candidate, it stays marked as researched. If i
 
 Some outbound links may become affiliate links. If you buy through one, sudoflux may earn a commission at no extra cost to you.
 
-Affiliate links should not appear as fake endorsements. Pages should distinguish:
+Affiliate links do not change the underlying evidence. Pages distinguish:
 
 - owned / currently used
 - owned / previously used
@@ -29,9 +29,9 @@ Affiliate links should not appear as fake endorsements. Pages should distinguish
 
 Display ads may be added later. Ads are not endorsements.
 
-## No fake testimonials
+## Evidence and corrections
 
-This site should not use fake testimonials, fake benchmark numbers, fake “we tested dozens of products” claims, or synthetic review quotes.
+Product claims remain tied to the evidence available for that item. Corrections, changed configurations, and stale information should be identified when discovered.
 
 ## Contact
 

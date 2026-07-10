@@ -8,7 +8,7 @@ description: VR settings for iRacing on Pimax Crystal Super 50PPD
 
 VR-optimized settings for Pimax Crystal Super (50PPD mode) + RTX 5090.
 
-:::caution Work in Progress
+:::caution[Work in Progress]
 These settings are still being tuned. Check back for updates.
 :::
 
@@ -52,7 +52,7 @@ This cuts GPU load significantly without perceptible quality loss. Requires eye 
 
 **With foveated rendering enabled, 90 Hz is achievable without heavy tweaking** — unlike AMS2 which struggles at that refresh rate.
 
-:::note OpenXR Toolkit
+:::note[OpenXR Toolkit]
 Used only for performance overlay (FPS + GPU/CPU bound indicator). No visual tweaks enabled.
 :::
 

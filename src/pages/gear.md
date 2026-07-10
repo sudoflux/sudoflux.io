@@ -5,7 +5,7 @@ description: Owned, tested, rejected, and researched gear notes for local AI, ho
 
 # Recommended Gear
 
-This is not a fake review farm. Gear on this page must be labeled by evidence level.
+Gear on this page is labeled by evidence level so firsthand use, previous ownership, and researched candidates remain distinct.
 
 ## Evidence labels
 
@@ -46,7 +46,7 @@ Affiliate links may be added later, but they do not change the label. If somethi
 
 ## Draft buyer-guide queue
 
-These are good monetizable pages because they can be useful without fake testimonials:
+These are strong candidates for practical guides grounded in the active lab:
 
 1. RTX 4090 local AI server: what 24GB VRAM actually buys you.
 2. 10GbE homelab networking: what to buy before you blame ZFS.
@@ -56,4 +56,4 @@ These are good monetizable pages because they can be useful without fake testimo
 
 ## Editorial rule
 
-A page can say “I have not tested this yet.” That is better than pretending.
+Evidence labels should reflect the current state, including when an item has not been tested yet.

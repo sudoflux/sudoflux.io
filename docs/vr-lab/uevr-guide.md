@@ -7,7 +7,7 @@ status: WIP
 
 # UEVR Settings Guide (Pimax Crystal Super)
 
-:::caution Work in Progress
+:::caution[Work in Progress]
 This guide is actively being tested and updated. Settings may change as we validate performance.
 :::
 
@@ -40,7 +40,7 @@ Before starting, ensure you have:
 
 [UEVR](https://uevr.io/) (Universal Unreal Engine VR Mod) converts flat Unreal Engine 4/5 games into VR experiences. This guide covers optimized settings for the **Pimax Crystal Super at 50 PPD** with an **RTX 5090**.
 
-:::danger 50 PPD is Demanding
+:::danger[50 PPD is Demanding]
 The 50 PPD engine pushes **6200×6200 per eye** at 100% render scale. Even an RTX 5090 needs careful optimization. Don't expect to max everything - target stable frames over pretty screenshots.
 :::
 
@@ -66,7 +66,7 @@ Realistic targets at 50 PPD with RTX 5090:
 
 ## Common Mistakes
 
-:::warning Avoid These
+:::warning[Avoid These]
 - **Stacking upscaling**: Don't use DLSS + UEVR render scale + Pimax render scale all together
 - **Leaving RT on**: Ray tracing murders VR framerates - disable it
 - **Wrong OpenXR runtime**: Must be PimaxXR, not SteamVR or WMR
@@ -177,7 +177,7 @@ For smooth 90Hz on Crystal Super:
 
 ## Per-Game Profiles
 
-:::note Testing Needed
+:::note[Testing Needed]
 These profiles are pending validation. Check back for updates.
 :::
 
@@ -309,7 +309,7 @@ VR_AimInterp = true            # Smooth aim transitions
 
 ## Screenshots
 
-:::note Coming Soon
+:::note[Coming Soon]
 Screenshots of settings and in-game examples will be added after testing.
 :::
 

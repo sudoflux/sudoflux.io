@@ -112,7 +112,7 @@ function HomepageHeader() {
           className={styles.terminalPrompt}
         >
           <span className={styles.promptSymbol}>❯</span>
-          <span className={styles.promptPath}>tested-notes / not-slop</span>
+          <span className={styles.promptPath}>field-notes / working-lab</span>
         </motion.div>
 
         <motion.h1
@@ -143,7 +143,7 @@ function HomepageHeader() {
           custom={3}
         >
           Real configurations, parts lists, failure notes, and tuning guides from a messy working lab.
-          No fake testimonials, no pretend benchmarks, and no “we tested 37 products” nonsense.
+          Tested versions, explicit caveats, and clear evidence labels included.
         </motion.p>
 
         <motion.div
@@ -226,7 +226,7 @@ function TrustModel() {
     'Firsthand gear is labeled as owned/currently used or previously used.',
     'Researched picks are labeled separately until they are actually tested.',
     'Affiliate links, if added, will be disclosed and will not change the testing status.',
-    'Stale pages should say they are stale instead of pretending to be current.',
+    'Stale pages are marked clearly and updated when the configuration is verified again.',
   ];
 
   return (
@@ -234,11 +234,10 @@ function TrustModel() {
       <div className={styles.container}>
         <div className={styles.trustPanel}>
           <div>
-            <span className={styles.kicker}>editorial rule</span>
-            <h2>No slop testimonials.</h2>
+            <span className={styles.kicker}>documentation standard</span>
+            <h2>Documented with context.</h2>
             <p>
-              sudoflux is allowed to be useful, opinionated, and monetized later. It is not allowed
-              to pretend Josh tested things he did not test.
+              Each page should show what was tested, what changed, and what remains uncertain.
             </p>
           </div>
           <ul>
